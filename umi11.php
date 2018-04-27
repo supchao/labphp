@@ -1,22 +1,11 @@
 <?php
-$a ='';
-$b ='';
+$score = rand(0,100);
+echo $score . '<br>';
 
-if(isset($_GET['x'])) {
-    $a = $_GET['x'];
-
-    if($a%4 ==0   && $a%100!=0 || $a%400==0) {
-        $b = "<br>" ."&nbsp" ."&nbsp" ."&nbsp" .$a . "是閏年";
-    }
-    else{
-        $b ="<br>" ."&nbsp" ."&nbsp" ."&nbsp" . $a . "不是閏年";
-    }
+echo'<hr>';
+$var1 =10; $var2 = 3;
+if($va1-- <10 & $var2++ >3){  // &&如果前項已經可以決定答案後項不會動作   &前後都做二進位運算
+    echo "ok: {$var1} : {$var2}<br>";
+}else{
+    echo"XX:{$var1}:{$var2}<br>";
 }
-?>
-<form>
-    <input type="text" name="x" value="<?php echo $a ;?>"/>
-    <input type = "submit" />
-    <?php
-    echo $b;
-    ?>
-</form>

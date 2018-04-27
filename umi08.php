@@ -4,5 +4,5 @@
     $z = $x + $y;
     echo "{$x} + {$y} ={$z}<br>";
 //    echo $x . ':'. gettype($x) . '<br>';
-//    var_dump($x);
+//      var_dump($x);
 ?>
