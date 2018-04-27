@@ -26,7 +26,8 @@ if (isset($_GET['x'])) {
         $z = $x * $y;
     }
     else if($u == '4'){
-        $z = (float)($x / $y) . '             '.$x%$y;
+//        $z = (float)($x / $y) . "&nbsp&nbsp&nbsp".$x%$y;
+        $z = number_format($x / $y,2) ;
     }
 
 
@@ -60,7 +61,7 @@ if (isset($_GET['x'])) {
     <input type="submit" value="=" name=""/>
     <?php
     //    if(isset($_GET['x']) && $_GET['y']){
-    echo $z;
+    echo $z . "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" . $x%$y;
     //    }
     ?>
 </form>
