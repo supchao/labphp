@@ -17,11 +17,16 @@ $a3['name'] = 'umi';  /// key => value
 $a3['weight'] = 80;
 $a3['gender'] = true;
 $a3['age'] = 53;
-$a3[123]=456;
+$a3[123] = 456;
 var_dump($a3);
 
+foreach($a3 as $k=>$v){
+    echo "{$k} : {$v}";
+}
+
+
 echo '<hr>';
-$a4 = array(12,34,56,'iii',true);
+$a4 = array(12, 34, 56, 'iii', true);
 var_dump($a4);
 
 

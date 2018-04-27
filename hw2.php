@@ -16,17 +16,15 @@ if (isset($_GET['x'])) {
 //        case 4:a
 //            $z = $x / $y;
 //    }
-    if($u =='1')
-    { $z = $x + $y;}
-    else if($u == '2'){
+    if ($u == '1') {
+        $z = $x + $y;
+    } else if ($u == '2') {
         $z = $x - $y;
-    }
-    else if($u == '3'){
+    } else if ($u == '3') {
         $z = $x * $y;
-    }
-    else if($u == '4'){
+    } else if ($u == '4') {
 //        $z = (float)($x / $y) . "&nbsp&nbsp&nbsp".$x%$y;
-        $z = number_format($x / $y,2) ."&nbsp" . $x%$y;
+        $z = number_format($x / $y, 2) . "&nbsp" . $x % $y;
     }
     //interger
 //    echo "{$x} + {$y} ={$z}<br>";
