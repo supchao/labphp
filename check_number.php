@@ -7,9 +7,12 @@
         if($isRight){
             echo 'OK';
         }
+        else{
+            echo 'XX';
+        }
     }
 ?>
 <form>
     <input type="text" name="id"/>
-    <input type="submit" value="check"/>
+    <input type="submit" value="check" />
 </form>
