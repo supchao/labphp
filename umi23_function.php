@@ -1,8 +1,16 @@
 <?php
 
-    sayya();
-sayya();    sayya();
-    function sayya(){
-        echo "ya<br>";
-    }
+sayya();
+sayya();
+sayhello('badk');
+function sayya()
+{
+    echo "ya<br>";
+}
+
+function sayhello($name)
+{
+    echo "hello, {$name}<br>";
+}
+
 ?>
