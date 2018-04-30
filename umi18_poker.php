@@ -33,6 +33,7 @@ foreach ($poker as $k => $v)
             echo"<tr>";
         foreach($playerin as $p){
                 echo"<td>{$suits[(int)($p/13)]}{$v[$p%13]}</td>";
+//            echo $p;
         }
             echo"</tr>";}
         ?>

@@ -4,7 +4,6 @@ $tmp='';
 $j ='';
 $l=50;
 $transbefore = array();
-
 for($i =0;$i<$l;$i++){
     $transbefore[$i] = $i+1;
 }
