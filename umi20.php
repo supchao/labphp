@@ -10,7 +10,7 @@ if(isset($_GET['x'])) {
 }
 ?>
 
-<form >
+<form>
     1+2+3+......+
     <input type="text" name="x" value="<?php echo $_GET['x'];?>"/>
     <input type="submit" name="y" />
