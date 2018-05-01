@@ -1,0 +1,30 @@
+$_GET    get
+$_POST   post
+$_REQUEST  post/get
+
+command
+sql
+internet
+
+
+unix
+-
+l 檔案類型 link檔案 符號連結
+d
+
+
+sudo chmod 700 dir1(目標) 可讀可寫可執行
+sudo chmod 100 dir1     可執行
+ls -l
+ls -dl dir1   權限
+ls -al dir1
+
+ps aux | grep httpd
+
+uid 2^16  0-65535
+
+mkdir dir1  產生目錄
+touch file1
+
+
+檔案操作ㄦ-----

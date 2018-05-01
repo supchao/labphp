@@ -14,6 +14,6 @@ for($j=$l-1;$j>=0;$j--){
     $transbefore[$j] = $tmp;
 }
 foreach($transbefore as$k=> $v){
-    echo "random過後 aray[{$k}] :  {$v} <br>";
+    echo "洗牌過後 撲克牌[{$k}] :  {$v} <br>";
 }
 ?>
