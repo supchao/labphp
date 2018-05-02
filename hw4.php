@@ -9,13 +9,13 @@ function color($w){
     return $result;
 }
 ?>
+<input type="text" name="k"/>
 <table border="1" width="100%" style="table-layout:fixed;">
-
             <?php
-
-            for($j =0;$j <10;$j++) {
+            $k=$_POST['k'];
+            for($j =0;$j <$k/10;$j++) {
                 echo "<tr>";
-                for ($i = 1; $i <= 10; $i++) {
+                for ($i = 1; $i <= $k/10; $i++) {
                     $k = $j*10+$i;
                     $l = color($k);
                     if($l){
@@ -25,12 +25,8 @@ function color($w){
                     else{echo '<td style="text-align:center;">';
                     echo $k;
                     echo "</td>";}
-
-
-
                 }
                 echo "</tr>";
             }
             ?>
-
 </table>
