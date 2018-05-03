@@ -19,8 +19,6 @@ $src_w = imagesx($src); $src_h = imagesy($src);
 
 imagecopyresized($dst,$src,$dst_x,$dst_y,0,0,$dst_w,$dst_h,$src_w,$src_h);
 
-
-
 header("Content-type: image/jpg");
 imagejpeg($dst,"test3/new.jpg");/// 輸出到某地方
 
