@@ -1,0 +1,46 @@
+echo $PATH
+echo $PS1
+
+http://sqlite.org/index.html
+
+./myspl -u root -p'root'
+
+# superuser
+
+pwd -> print word direct
+query-> sql server q
+
+rm -f *
+rm -rf .dummy
+
+\h
+-----------------------sql語法------------
+show databases
+create database iii (database name)
+drop database iii   (delete database)
+use iii
+create table cust (id integer primary key auto_increment,cname varchar(20),tel varchar(20),birthday date)(建立 table)
+desc cust  (檢視 cust)
+drop table cust (刪除 table)
+
+insert into cust values (1,'umi','123','1999-12-31');
+
+select id,cname,tel,birthday from cust;
+select * from cust where cname = 'jj' and id='1';
+select * from cust where id>0 order by cname;     order by(排序)    desc(反向)
+
+delete * from cust where id<10;
+
+update cust set cname='mary' ,tel='777' where id=112;
+
+int(11) -> 2^32 length
+
+./mysqladmin -u root -p password  已知密碼的情況更改root密碼
+  ----------------------mysql遺失密碼---------------
+
+  步驟1          ps aux | grep mysql
+  步驟2          kill (port號碼）
+  步驟3           ./mysqld --skip-grant-tables&  跳過授權機制
+  步驟4           FLUSH PRIVILEGES;
+  步驟5           SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
+  步驟6           re sign_in
