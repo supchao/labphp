@@ -1,0 +1,38 @@
+ alter table mytest modify column f1 int(3) zerofill;   重新定義欄位
+ alter table mytest add column f2 int;                  新增
+
+ alter table mytest modify column f2 int unique auto_increment;
+ unique 唯一
+ auto_increment 自動遞增 不重複
+
+ alter table mytest auto_increment =150;  改自動遞增號碼 回頭無法
+ float 10^38
+ double 10^308
+datetime
+time
+date
+char 255 長度
+varchar 65535 長度
+binary 255  二進制資料
+binary 65535
+text 65536
+largetext 2^32 文字內容
+
+
+enum 列舉
+set 多列舉
+
+default character set utf8
+
+-----------------------
+member.php
+umi60.php
+checkaccount.php
+login.php
+main.php
+
+bmain.php
+product.php
+addproduct.php
+editproduct.php
+
