@@ -1,7 +1,8 @@
 <?php
 include_once 'sql.php';
 include_once 'member.php';
-
+include_once 'cart.php';
+session_start();
     $account = $_REQUEST['account'];
     $passwd = $_REQUEST['passwd'];
 
@@ -19,7 +20,12 @@ include_once 'member.php';
 
         //echo $member->id;
         if(password_verify($passwd,$member->passwd)){
-            header('Location: main.php');
+//            $cart = new cart();                   購物車方法2
+//            $member->setCart($cart);
+
+            $_SESSION['mem'] = $member;
+            $_SESSION['cart'] = new cart();     //  購物車方法1
+             header('Location: main.php');
         }
         else{
             header('Location: login.php');

@@ -1,6 +1,7 @@
 <?php                       // MYSQL 查詢 and 刪除 實作
     include_once 'sql.php';
     include_once 'product.php';
+    include_once 'myconfig.php';
 
     if(isset($_REQUEST['delid'])){
         //delete
@@ -8,8 +9,29 @@
         $sql = "delete from product where id={$delid}";
         $mysqli->query($sql);
     }
-    $sql = 'select * from product';
+
+    $sql ='select count(*) as `sum` from product';
     $result = $mysqli->query($sql);
+    $data = $result->fetch_assoc();
+    $sum = $data['sum'];
+    $page =1;
+
+
+    if(isset($_REQUEST['page'])){
+        $page = $_REQUEST['page'];
+    }
+    $totalpage = ceil($sum / RPP);
+    $prev = $page== 1?1:$page-1;
+    $next = $page==$totalpage?$page:$page+1;
+    $start = ($page-1)*RPP;
+
+
+
+
+    $sql = "select * from product order by id limit {$start}," . RPP; //order by 排序  asc預設  desc
+    $result = $mysqli->query($sql);
+
+
 ?>
 
 <a href="addproduct.php">add new</a>
@@ -46,3 +68,7 @@
     ?>
 
 </table>
+<hr>
+<a href="?page= <?php echo $prev;?>">prev</a>
+<?php echo $page;?>&nbsp;
+<a href="?page= <?php echo $next;?>">next</a>

@@ -5,6 +5,7 @@ class member{
     private $name;
     private $account;
     private $passwd;
+    private $catr;
 
     function __get($name){
         return $this->$name;    //$name ==__get($name)
@@ -12,4 +13,8 @@ class member{
     function __set($name,$value){
         $this->$name = $value;
     }
+//    function setCart($cart){
+//        //
+//        $this->cart = $cart;
+//    }
 }

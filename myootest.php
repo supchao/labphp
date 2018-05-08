@@ -47,4 +47,18 @@ class test12 extends test1{
         echo 'test12:m2()<br>';
     }
 }
+class student{
+    public $ch,$eng,$math;
+    function __construct($ch,$eng,$math){
+        $this->ch = $ch;
+        $this->eng = $eng;
+        $this->math = $math;
+    }
+    function calsum(){
+        return $this->ch+ $this->eng + $this->math;
+    }
+    function calavg(){
+        return $this->calsum() /3;
+    }
+}
 ?>
