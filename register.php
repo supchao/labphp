@@ -16,11 +16,30 @@
         }else{
             echo 'insert error';
         }
-
     }
 ?>
+<script>
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            // document.getElementById('here').innerHTML = xhttp.responseText;
+            var ret = xhttp.responseText;
+            if(ret != 0 ){
+                document.getElementById('mesg').innerHTML = 'xxxx';
+            }else{
+                document.getElementById('mesg').innerHTML = 'ok';
+            }
+        }
+    }
+    function isNewAccount(){
+        var account = document.getElementById('account').value;
+        xhttp.open('GET','isNewAccount.php?account='+account,true);
+        xhttp.send();
+    }
+</script>
 <form>
-    account : <input name="account" /><br>
+    account : <input name="account" id="account" onchange="isNewAccount()"/><span id="mesg"></span><br>
     passwd : <input type="password" name="passwd"/><br>
     real name : <input name="name"/><br>
     <input type="submit" value="new"/>

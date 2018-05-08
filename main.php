@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <?php
 include_once 'sql.php';
 include_once 'member.php';
@@ -22,6 +23,12 @@ Product List:<br>
         <th>num.</th>
         <th>update cart</th>
     </tr>
+    <script>
+        function addcart(pid){
+            var num = $("#num_"+ pid).val();
+            alert(pid + ":" + num);
+        }
+    </script>
     <?php
 
 
@@ -29,8 +36,9 @@ Product List:<br>
         echo "<tr>";
         echo "<td>{$product->pname}</td>";
         echo "<td>{$product->price}</td>";
-        echo "<td><input type='number' name='number' /></td>";
-        echo "<td><input type='submit' value='add cart'</td>";
+        echo "<td><input type='number' name='number' id ='num_{$product->id}'/></td>";
+        echo "<td><input type='button' 
+            onclick='addcart({$product->id})'  value='add cart'</td>";
         echo "</tr>";
     }
     ?>

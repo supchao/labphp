@@ -20,7 +20,7 @@ session_start();
 
         //echo $member->id;
         if(password_verify($passwd,$member->passwd)){
-//            $cart = new cart();                   購物車方法2
+//            $cart = new cart();               //  購物車方法2
 //            $member->setCart($cart);
 
             $_SESSION['mem'] = $member;
