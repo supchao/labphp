@@ -3,3 +3,4 @@ cart.php
 main.php
 checkout.php
 myquery.php
+close.php
