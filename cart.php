@@ -15,7 +15,7 @@ class cart{
     }
     function getitemnum($pid){
         if(isset($this->list["{$pid}"])){
-
+            return $this->list["{$pid}"];
         }else{
             return 0;
         }

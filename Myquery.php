@@ -11,13 +11,14 @@ class Myquery{
     }
 
     function getPinfo($pid,$field){
-        $sql = "select * from product where id=$pid";
+
+        $sql = "select * from product where id = $pid";
         $result = $this->mysqli->query($sql);
-        if($result->num_rows == 0){
+        if ($result->num_rows == 0){
             return false;
         }else{
             $data = $result->fetch_assoc();
-            switch ($filed){
+            switch ($field){
                 case self::QUERY_PID:   return $data['id'];
                 case self::QUERY_PNAME:   return $data['pname'];
                 case self::QUERY_PRICE:   return $data['price'];
