@@ -13,4 +13,11 @@ class cart{
     function rmproduct($pid){
         unset($this->list["{$pid}"]);
     }
+    function getitemnum($pid){
+        if(isset($this->list["{$pid}"])){
+
+        }else{
+            return 0;
+        }
+    }
 }

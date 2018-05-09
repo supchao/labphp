@@ -36,7 +36,7 @@ Product List:<br>
         echo "<tr>";
         echo "<td>{$product->pname}</td>";
         echo "<td>{$product->price}</td>";
-        echo "<td><input type='number' name='number' id ='num_{$product->id}'/></td>";
+        echo "<td><input type='number' name='number' id ='num_{$product->id}' value=''/></td>";
         echo "<td><input type='button' 
             onclick='addcart({$product->id})'  value='add cart'</td>";
         echo "</tr>";
@@ -47,3 +47,5 @@ Product List:<br>
 </table>
 <hr>
 <a href="logout.php" >log out</a>
+<a href="checkout.php" >check out</a>
+
