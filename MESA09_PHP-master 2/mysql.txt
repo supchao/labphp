@@ -1,0 +1,5 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+
+
+Warning: file_put_contents(feed/needsUpdate.txt): failed to open stream: Permission denied in /Applications/MAMP/bin/mamp/php/functions.php on line 37
+

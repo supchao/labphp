@@ -7,9 +7,14 @@ session_start();
     $passwd = $_REQUEST['passwd'];
 
 //    $sql = "select *from member where account='{$account}' and passwd='{$newpaddwd}'";
-    $sql = "select *from member where account='{$account}'";  //
-    $result  = $mysqli->query($sql);
+    $sql = "select *from member where account=?";
 
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("s",$account);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+//  $result = mysqli->query($sql);
     if($result ->num_rows >0){
        $member = $result->fetch_object("member"); //$result 轉換 object
 //       if($member instanceof Member){

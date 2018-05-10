@@ -17,6 +17,7 @@
     $page =1;
 
 
+
     if(isset($_REQUEST['page'])){
         $page = $_REQUEST['page'];
     }
@@ -61,7 +62,7 @@
         echo "<td>{$product->price}</td>";
         echo "<td>{$product->qty}</td>";
         echo "<td><a href='?delid={$product->id}' onclick='return confirmdelete(\"{$product->pname}\");'>Delete</a></td>";
-        echo "<td><a href='editproduct.php?editid={$product->id}'>Edit</a></td>";
+        echo "<td><a href='editpro.php?editid={$product->id}'>Edit</a></td>";
         // echo "<td><a href='?delid={$product->id}'>delete</a></td>";
         echo '</tr>';
     }

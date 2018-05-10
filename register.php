@@ -6,10 +6,17 @@
         $account = $_REQUEST['account'];
         $passwwd = $_REQUEST['passwd'];
         $name = $_REQUEST['name'];
-        $newpaddwd = password_hash($passwwd, PASSWORD_DEFAULT);
+        $passwd = password_hash($_REQUEST['passwd'],
+            PASSWORD_DEFAULT);
+        $icon=null;
+        if($_FILES['icon']['error']==0){
+            $icon = addslashes(file_get_contents($_FILES['icon']['tmp_name']));
+        }
 
-        $sql = "insert into `member`(`account`,`passwd`,`name`)" .
-            "values('{$account}','{$newpaddwd}','{$name}')";
+
+
+        $sql = "insert into `member`(`account`,`passwd`,`name`,`icon`)" .
+            "values('{$account}','{$passwd}','{$name}','{$icon}')";
 
         if($mysqli->query($sql)){
            header('Location: login.php');
@@ -38,9 +45,11 @@
         xhttp.send();
     }
 </script>
-<form>
+
+<form   meathod="post" enctype="multipart/form-data">
     account : <input name="account" id="account" onchange="isNewAccount()"/><span id="mesg"></span><br>
     passwd : <input type="password" name="passwd"/><br>
     real name : <input name="name"/><br>
+    icon: <input type="file" name="icon"/><br/>
     <input type="submit" value="new"/>
 </form>

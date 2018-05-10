@@ -8,14 +8,22 @@ include_once 'cart.php';
 session_start();
 
 if(!isset($_SESSION['mem'])){header('Location:login.php');}
+
+$member = $_SESSION['mem'];
+$cart = $_SESSION['cart'];
 $sql = "select *from product";
 $result = $mysqli->query($sql);
-$cart = $_SESSION['cart'];
+
 ?>
 
 
 Main Page
 <hr>
+echo ,<a href="editprofile.php"><?php echo $member->name;?></a>
+<?php
+    $icon = base64_encode($member->icon);
+?>
+<img src="data:image/png;base64,<?php echo $icon; ?>"/>
 Product List:<br>
 <table border="1" width="100%">
     <tr>
