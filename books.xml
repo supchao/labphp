@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book isbn="12345678" price="110">
+        <title>PHP 祕技</title>
+        <authors>
+            <author age="20">Brad</author>
+            <author>Leecen</author>
+        </authors>
+        <descritption>
+            best book of world
+        </descritption>
+    </book>
+    <book isbn="8654321" price="90">
+        <title>PHP BIRD</title>
+        <authors>
+            <author age="30">Brad</author>
+        </authors>
+        <descritption>
+            WORST book of world
+        </descritption>
+    </book>
+</books>

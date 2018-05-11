@@ -1,0 +1,5 @@
+wireframe
+sudo chmod -R 777 iii   該目錄下全部改變權限 -R 遞迴
+
+
+

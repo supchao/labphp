@@ -19,7 +19,7 @@
 <script>
     $(document).ready(function () {
         $("#bt1").click(function(){
-            $.get('umi68.php',function(data,status){
+            $.get('umi68.php',{max:10},function(data,status){
                 $("#id1").html(data+":"+status);
             });
         });
