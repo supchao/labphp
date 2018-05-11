@@ -1,0 +1,6 @@
+1. 即時聊天室	核心功能	聊天通訊	   AJAX	WebSocket(web socket html5) 2選一
+			會員登入系統＋大頭貼
+
+2.社區管理	核心功能 資料庫	公告欄 郵件收發
+
+3.Opendata 應用
