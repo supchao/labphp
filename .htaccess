@@ -1,0 +1,4 @@
+#AuthType Basic
+#AuthName "Please input admin password"
+#AuthUserFile /var/.htpasswd
+#Require valid-user

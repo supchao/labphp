@@ -1,0 +1,58 @@
+conf->apache->httpd.conf->directory
+
+
+https://www.puritys.me/docs-blog/article-133-apache-.htaccess-%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F%EF%BC%8C%E5%AF%86%E7%A2%BC%E6%A9%9F%E5%88%B6.html
+
+./htpasswd -c ~/private umi (passwd)  新增帳號
+htpasswd .htpasswd user     修改密碼
+ ls -l ~/private
+
+/同路徑
+.htaccess
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+AuthType Basic
+AuthName "Please input admin password"
+AuthUserFile /Users/admin/private
+Require valid-user
+
+----------------------------
+lock tables product read;  鎖定資料表 只供查詢
+lock tables product read local;  鎖定資料表
+unlock tables; 解
+
+
+lock tables product write; 鎖定資料表 可新增
+---------------------------------------
+sql 交易
+start transaction;
+到結束前 都是假設狀態
+
+sql 敘述句
+sql 敘述句
+
+|-rollback; 取消
+|或是
+|-commit;   真正寫入
+-----------------------------------------
+select sleep(3);
+select avg(price) product;
+
+select * from product where pname like 'test_';     //一個 _一個字元
+select * from product where pname like 'test%';     //%零個或多個
+select * from product where pname not like 'test%';     //%零個或多個 排除
+
+select *from product where id not between 7 and 12;
+select *from product where id between 7 and 12;
+
+select repeat('-',10);
+
+select *, concat(pname,price) as str from product;
+---------------------------------------------
+select *from product group by pname;
+
+select *from product where id>10 group by pname having id>10;   //having group 的判斷
