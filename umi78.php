@@ -27,10 +27,15 @@
 
     $json2 =json_encode($obj1);
     echo $json2;
+    echo "<br>";
+    echo gettype($json2);
     echo "<hr>";
 
     $root = json_decode($json2);
-    foreach($root as $k=>$v){
+    echo gettype($root);
+    echo "<hr>";
+
+foreach($root as $k=>$v){
         echo "{$k}:{$v}<br>";
     }
     echo "<hr>";

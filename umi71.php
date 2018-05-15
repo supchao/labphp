@@ -26,7 +26,7 @@
 
         $("#bt2").click(function(){
             $.post('umi69.php',{max:10},function(data,status){
-               $("#id3").html(data + ":" + status);
+               $("#id3").html(data + ":" + status+"<br>");
             });
         });
     });

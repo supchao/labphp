@@ -1,3 +1,9 @@
+<?php
+include_once 'sql.php';
+session_start();
+if(!isset($_SESSION['member'])){header('Location:talkroom.php');}
+else{$member = $_SESSION['member'];}
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -11,7 +17,6 @@
     }
     </style>
     <script type = "text/javascript">
-        id=1;
         var ws = new WebSocket("ws://localhost:8080");
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
@@ -23,6 +28,7 @@
                     document.getElementById('intextv').appendChild(dv);
                     var intextv = document.getElementById('intextv');
                     intextv.scrollTop = intextv.scrollHeight;
+
                 }else{
                     document.getElementById('intextv').innerHTML = 'xx';
                 }
@@ -40,7 +46,7 @@
                     // Web Socket is connected, send data using send()
                     ws.send("Message to send");
                     alert("Message is sent...");
-                    test3();
+                    // test3();
                 };
 
                 ws.onmessage = function (evt) {
@@ -63,6 +69,8 @@
         var i = 0;
         function test1() {
             var input = document.getElementById('input').value;
+
+
             ws.send(input);
             inser();
         }
@@ -73,9 +81,7 @@
                 xhttp.send();
             }
         }
-        function test3(){
 
-        }
 
     </script>
 

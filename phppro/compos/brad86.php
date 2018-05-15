@@ -2,6 +2,7 @@
 
 <html>
 <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <style>
     #intextv{
     overflow:scroll;
@@ -11,7 +12,10 @@
     }
     </style>
     <script type = "text/javascript">
-        id=1;
+        $(document).ready(function(){
+            // interval(1000,WebSocketTest());
+
+        });
         var ws = new WebSocket("ws://localhost:8080");
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){

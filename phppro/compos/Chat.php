@@ -2,6 +2,8 @@
 require dirname(__DIR__) . '/compos/vendor/autoload.php';
 
 //namespace MyApp;
+
+
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
@@ -44,4 +46,6 @@ class Chat implements MessageComponentInterface {
 
         $conn->close();
     }
+
+
 }
