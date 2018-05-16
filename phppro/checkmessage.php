@@ -6,9 +6,9 @@ session_start();
 date_default_timezone_set('Asia/Taipei');
 $result='';
 $reto=0;
-if (isset($_GET['id']) && isset($_SESSION['member']) && isset($_GET['intext'])) {
+if (isset($_GET['id'])  && isset($_GET['intext'])) {
     $id = $_GET['id'];
-    $member = $_SESSION['member'];
+    $member = $_SESSION[$id];
     $name = $member->name;
     $intext = $_GET['intext'];
     $datetime = date("Y-m-d H:i:s");

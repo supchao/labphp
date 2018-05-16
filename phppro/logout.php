@@ -2,13 +2,17 @@
 
 include_once 'sql.php';
 include_once 'member.php';
-session_start();
-$member = $_SESSION['member'];
-$sql = "update member set state=0 where id= {$member->id}";
+if($_REQUEST['id']){
+    $id= $_REQUEST['id'];
+}
+$sql = "update member set state=0 where id= $id";
 $result = $mysqli->query($sql);
 
+
+
+
 if($result) {
-    session_destroy(); //
+    unset($_SESSION['member']);
     header('Location:talkroom.php');
 }
 ?>
