@@ -1,7 +1,7 @@
 <head>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery.toast.css" rel="stylesheet" >
-
+    <title>Welecom to Chat</title>
     <style>
     button{
         outline:none;
@@ -94,11 +94,7 @@ if (!isset($_SESSION['member'])) {
 if (isset($_SESSION['member'])) {
     $member = $_SESSION['member'];
     $id=$member->id;
-
-
 }
-
-$icon = base64_encode($member->icon);
 ?>
 <h1 class="h1" style="text-align: center">HELLO ! <?php echo $member->name;?>  歡迎進入</h1>
 
@@ -137,13 +133,13 @@ $icon = base64_encode($member->icon);
     });
     function get() {
         $.get('checkmessage_1.php',{id:<?php echo $member->id; ?>}, function (object) {
+            $("#intextv").empty();
             if (object) {
                 var num = JSON.parse(object);
-                $("#intextv").empty();
+
                 // console.log(num);
                 for (var i = 0; i < num.length; i++) {
-                    var ret = num[i].name + " : " + num[i].mesg ;
-
+                    var ret = num[i].name + " ： " + num[i].mesg ;
                     var dp = document.createElement("p");
                     var ds = document.createElement("span");
                     dp.innerHTML = ret;
@@ -151,9 +147,10 @@ $icon = base64_encode($member->icon);
                     var dv = document.createElement("div");
                     dv.appendChild(dp);
                     dv.appendChild(ds);
-
                     if (num[i].id == <?php echo $member->id?>) {
                         dv.classList.add("divtexr");
+                        ret = "我 "+num[i].name +" ： "+num[i].mesg;
+                        dp.innerHTML = ret;
                         dp.classList.add("dintexr");
                         ds.classList.add("spanr");
                     }
@@ -165,7 +162,7 @@ $icon = base64_encode($member->icon);
                     document.getElementById('intextv').appendChild(dv);
 
                 }
-            }
+            }else{}
         });
     }
     function getfriend() {
@@ -174,12 +171,12 @@ $icon = base64_encode($member->icon);
                 var num = JSON.parse(oct);
                 $("#fri").empty();
                 var dc = document.createElement("div");
-                dc.innerHTML = '上線成員';
+                dc.innerHTML = '上線成員'+(num.length-1)+'人';
                 dc.classList.add("dcd");
                 document.getElementById('fri').appendChild(dc);
 
                 for (var i = 0; i < num.length; i++) {
-                    var ret = num[i].name + "  is Online";
+                    var ret = num[i].name + "  Online";
                     if (num[i].id != <?php echo $member->id?>) {
                         var dd = document.createElement("div");
                         var dv = document.createElement("button");
@@ -195,7 +192,6 @@ $icon = base64_encode($member->icon);
                 }
             }
             else{}
-            // else{alert("xxx");}
         });
     }
 
