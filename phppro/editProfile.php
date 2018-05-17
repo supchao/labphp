@@ -21,7 +21,7 @@ if (isset($_FILES['icon']) && $_FILES['icon']['error']==0){
     $_SESSION['member'] = $member;
 
 
-    header('Location: main.php');
+    header('Location: chatroom.php');
 }
 
 

@@ -6,21 +6,26 @@
         $account = $_REQUEST['account'];
         $passwwd = $_REQUEST['passwd'];
         $name = $_REQUEST['name'];
-        $mesg=$_REQUEST['mesg'];
+        $hid = $_REQUEST['hid'];
         $newpaddwd = password_hash($passwwd, PASSWORD_DEFAULT);
 
-        $icon=null;
-        if($_FILES['icon']['error'] == 0){
-            $icon = addslashes(file_get_contents($_FILES['icon']['tmp_name']));
+        $icon = null;
+        if ($_FILES['icon']['error']==0){
+            $pic = $_FILES['icon'];
+
+            $icon =
+                addslashes(file_get_contents($_FILES['icon']['tmp_name']));
         }
 
         $sql = "insert into `member`(`account`,`passwd`,`name`,`icon`)" .
             "values('{$account}','{$newpaddwd}','{$name}','{$icon}')";
 
-        if($mysqli->query($sql)){
-           header('Location: talkroom.php');
+        if($hid){
+            echo 'insert error OR repeat account';
+
         }else{
-            echo 'insert error';
+            $mysqli->query($sql);
+            header('Location: talkroom.php');
         }
     }
 ?>
@@ -33,8 +38,10 @@
             var ret = xhttp.responseText;
             if (ret != 0){
                 document.getElementById('mesg').innerHTML = 'XXX';
+                document.getElementById('hid').innerHTML = ret;
             }else{
                 document.getElementById('mesg').innerHTML = 'OK';
+                document.getElementById('hid').innerHTML = ret;
             }
         }
     }
@@ -47,10 +54,12 @@
     }
 </script>
 <form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="hid" id="hid" />
     account : <input name="account" id="account" onchange="isNewAccount()"/>
     <span id="mesg" name="mesg"></span><br>
     passwd : <input type="password" name="passwd"/><br>
     real name : <input name="name"/><br>
     Icon: <input type="file" name="icon" /><br>
     <input type="submit" value="new"/><br>
+
 </form>

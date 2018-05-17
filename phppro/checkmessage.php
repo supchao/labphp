@@ -8,8 +8,6 @@ $result='';
 $reto=0;
 if (isset($_GET['id'])  && isset($_GET['intext'])) {
     $id = $_GET['id'];
-    $member = $_SESSION[$id];
-    $name = $member->name;
     $intext = $_GET['intext'];
     $datetime = date("Y-m-d H:i:s");
     $sql = "insert into message(`whoid`,`mesg`,`interdate`)values({$id},'{$intext}','{$datetime}')";

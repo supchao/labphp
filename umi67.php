@@ -29,7 +29,7 @@
         setInterval(test1, 3*1000);
     }
     setInterval(function(){
-        xhttp.open('GET','umi70.php',true);
+        xhttp.open('GET','umi70.php',false);
         xhttp.send();
     },1000);
 </script>
